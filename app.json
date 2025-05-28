@@ -1,0 +1,17 @@
+{
+  "name": "Skin Condition Detector",
+  "description": "A Flask application for detecting and inpainting skin conditions",
+  "repository": "https://github.com/yourusername/your-repo-name",
+  "keywords": ["python", "flask", "pytorch", "opencv"],
+  "env": {
+    "PYTHON_ENV": {
+      "description": "Environment setting for the application",
+      "value": "production"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+} 

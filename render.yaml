@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: skin-condition-detector
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python download_model.py
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 1 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: PORT
+        value: 10000
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: GUNICORN_CMD_ARGS
+        value: "--max-requests 1 --max-requests-jitter 1" 
